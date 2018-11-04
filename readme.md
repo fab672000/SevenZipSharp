@@ -18,7 +18,7 @@ As required by the GNU GPL 3.0 license, here's a rough list of what has changed 
 * Continous Integration added, both building and deploying, and code test coverage.
 * Tests re-written to NUnit 3 test cases.
 * General code cleanup.
-
+* New more transparent native dll copy/cleanup when building with the nuget package. Non need for the dll's to show on the solution anymore.
 -------------------------------------------------------------
 
 Original project information below, some information might be outdated or won't apply to this fork:
