@@ -54,7 +54,7 @@
                     {SfxModule.Installer, new List<string>(2) {"7zS.sfx", "7zSD.sfx"}}
                 };
 
-                if (Environment.Is64BitProcess)
+                if (IntPtr.Size==8)
                 {
                     result.Add(SfxModule.Default, new List<string>(1) { "7zxSD_All_x64.sfx" });
                     result.Add(SfxModule.Extended, new List<string>(4) { "7zxSD_All_x64.sfx", "7zxSD_Deflate_x64", "7zxSD_LZMA_x64", "7zxSD_PPMd_x64" });

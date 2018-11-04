@@ -1,0 +1,13 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <NativeBinary Include="$(MSBuildThisFileDirectory)..\tools\resources\**\*" />
+  </ItemGroup>
+
+  <Target Name="Cpy7zNative" BeforeTargets="Compile" >
+  <Copy SourceFiles="@(NativeBinary)" DestinationFolder="$(OutputPath)\%(RecursiveDir)" />    
+  </Target>
+
+  <Target Name="Del7zNative" AfterTargets="Clean" >
+  <Delete Files="@(NativeBinary->'$(OutputPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+</Project>
