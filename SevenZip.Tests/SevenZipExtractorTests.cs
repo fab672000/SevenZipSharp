@@ -59,6 +59,25 @@
             Assert.Contains(Path.Combine(OutputDirectory, "file1.txt"), Directory.GetFiles(OutputDirectory));
             Assert.Contains(Path.Combine(OutputDirectory, "file3.txt"), Directory.GetFiles(OutputDirectory));
         }
+        
+        [TestCase("zip.zip", "zip\r\n")]
+        [TestCase("rar4.rar", "rar4\r\n")]
+        [TestCase("rar5.rar", "rar5\r\n")]
+        [TestCase("tar.tar", "tar\r\n")]
+        [TestCase("gzip.gz", "gzip\r\n")]
+        [TestCase("bzip2.bz2", "bzip2\r\n")]
+        [TestCase("wim.wim", "wim\r\n")]
+        [TestCase("xz.xz", "xz\r\n")]
+        public void ExtractArchiveContentTest(string archive, string expectedContent)
+        {
+            using (var extractor = new SevenZipExtractor(@"TestData\"+archive))
+            {
+                extractor.ExtractArchive(OutputDirectory);
+            }
+
+            Assert.AreEqual(1, Directory.GetFiles(OutputDirectory).Length);
+            Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[0]).Equals(expectedContent));
+        }
 
         [Test]
         public void ExtractArchiveMultiVolumesTest()
@@ -88,6 +107,8 @@
                 tmp.ExtractArchive(OutputDirectory);
 
                 Assert.AreEqual(2, Directory.GetFiles(OutputDirectory).Length);
+                Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[0]).StartsWith("file1"));
+                Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[1]).StartsWith("file2"));
             }
         }
 
@@ -100,6 +121,9 @@
             {
                 tmp.ExtractArchive(OutputDirectory);
                 Assert.AreEqual(3, Directory.GetFiles(OutputDirectory).Length);
+                Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[0]).StartsWith("file1"));
+                Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[1]).StartsWith("file2"));
+                Assert.IsTrue(File.ReadAllText(Directory.GetFiles(OutputDirectory)[2]).StartsWith("file3"));
             }
         }
 
