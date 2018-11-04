@@ -1,4 +1,4 @@
-This is a fork from [tomap's fork](https://github.com/tomap/SevenZipSharp) of the [original CodePlex project](https://archive.codeplex.com/?p=sevenzipsharp).
+This is a fork from [squidbox's fork](https://github.com/tomap/SevenZipSharp) of the [original CodePlex project](https://archive.codeplex.com/?p=sevenzipsharp).
 
 ## Continuous Integration
 
@@ -12,7 +12,7 @@ This is a fork from [tomap's fork](https://github.com/tomap/SevenZipSharp) of th
 ## Changes from original project
 As required by the GNU GPL 3.0 license, here's a rough list of what has changed since the original CodePlex project, including changes made in tomap's fork.
 
-* Target .NET framework changed from 2.0 to 4.5.
+* Target .NET framework changed from 2.0 to 3.5 (so capable of running both 2.0 and 4.0 CLR's).
 * No support for Mono or Mobile.
 * Produces a NuGet package.
 * Continous Integration added, both building and deploying, and code test coverage.
