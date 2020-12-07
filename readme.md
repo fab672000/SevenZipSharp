@@ -7,8 +7,8 @@ In order to use the package user needs to first include the 7ZipExe package (tes
 
 Example of use in post build process:
 
-xcopy "$(TargetDir)..\..\packages\7ZipExe.18.5.0\tools\x64\7z.dll" "$(TargetDir)" /S /Y
-xcopy "$(TargetDir)..\..\packages\7ZipExe.18.5.0\tools\x64\7z.exe" "$(TargetDir)" /S /Y
+xcopy "$(TargetDir)..\\..\\packages\7ZipExe.18.5.0\tools\x64\7z.dll" "$(TargetDir)" /S /Y
+xcopy "$(TargetDir)..\\..\\packages\7ZipExe.18.5.0\tools\x64\7z.exe" "$(TargetDir)" /S /Y
 
 
 ## Continuous Integration
