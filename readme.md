@@ -1,5 +1,16 @@
 This is a fork from [squidbox's fork](https://github.com/tomap/SevenZipSharp) of the [original CodePlex project](https://archive.codeplex.com/?p=sevenzipsharp).
 
+Version 1.2.0 of the fab672000.SevenZipSharp nuget package:
+
+Now adds compatibility within 7ZipExe and builds against .net framework 4.5 again as original version.
+In order to use the package user needs to first include the 7ZipExe package (tested with version 18.5.0) then copy as a post build process the 7Zip dll and exe dependencies to the target dir.
+
+Example of use in post build process:
+
+xcopy "$(TargetDir)..\..\packages\7ZipExe.18.5.0\tools\x64\7z.dll" "$(TargetDir)" /S /Y
+xcopy "$(TargetDir)..\..\packages\7ZipExe.18.5.0\tools\x64\7z.exe" "$(TargetDir)" /S /Y
+
+
 ## Continuous Integration
 
 |   Branch  | Appveyor | Coveralls |
