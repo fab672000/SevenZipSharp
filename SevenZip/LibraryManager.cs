@@ -40,7 +40,7 @@ namespace SevenZip
                 return ConfigurationManager.AppSettings["7zLocation"];
             }
 
-            return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Environment.Is64BitProcess ? "7z64.dll" : "7z.dll");
+            return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "7z.dll");
         }
 
         /// <summary>

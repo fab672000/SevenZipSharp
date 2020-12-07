@@ -121,4 +121,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\Stage\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\Stage\packages\NUnit.3.12.0\build\NUnit.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)..\packages\7ZipExe.18.5.0\tools\x64\7z.dll" "$(TargetDir)" /S /Y
+xcopy "$(TargetDir)..\packages\7ZipExe.18.5.0\tools\x64\7z.exe" "$(TargetDir)" /S /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

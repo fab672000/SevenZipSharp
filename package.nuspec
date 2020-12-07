@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-		<id>Squid-Box.SevenZipSharp</id>
-		<version>1.1.0</version>
+		<id>fab672000.SevenZipSharp</id>
+		<version>1.2.0</version>
 		<authors>Joel Ahlgren, Thomas Piart, markhor</authors>
-		<summary>Managed 7-zip library written in C# (.NET 4.5) that provides data (self-)extraction and compression (all 7-zip formats are supported).</summary>
-		<description>Wraps 7z.dll or any compatible one and makes use of LZMA SDK.</description>
+		<summary>Fork of the squid-box version of the managed 7-zip library written in C# (.NET 4.5) that provides data (self-)extraction and compression (all 7-zip formats are supported) but also includes the 7ZipExe 18.5.0 package.</summary>
+		<description>Wraps 7z.dll or any compatible one and makes use of LZMA SDK. Note user must copy on a post build process the native dlls from 7zip-exe in this version to avoid conflicts.</description>
 		<language>en-US</language>
 		<licenseUrl>https://github.com/squid-box/SevenZipSharp/blob/master/license</licenseUrl>
 		<projectUrl>https://github.com/squid-box/SevenZipSharp</projectUrl>
-		<tags>7z sevenzip sevenzipsharp 7-zip</tags>
+		<tags>7z sevenzip sevenzipsharp 7-zip 7ZipExe</tags>
 		<releaseNotes>Fixed problem when modifying encrypted archives.</releaseNotes>
 	</metadata>
 	<files>

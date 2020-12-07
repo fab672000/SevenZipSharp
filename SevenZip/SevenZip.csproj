@@ -128,12 +128,6 @@
     <EmbeddedResource Include="sfx\Configs.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7z.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="7z64.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="arch\Test.txt" />
     <Content Include="sfx\Configs.xslt" />
   </ItemGroup>
@@ -155,6 +149,7 @@
     <EmbeddedResource Include="arch\Test.txt.gz" />
     <EmbeddedResource Include="arch\Test.txt.xz" />
     <EmbeddedResource Include="arch\Test.zip" />
+    <None Include="packages.config" />
     <None Include="SevenZip.snk" />
     <EmbeddedResource Include="sfx\7z.sfx" />
     <EmbeddedResource Include="sfx\7zCon.sfx" />
@@ -165,14 +160,11 @@
     <EmbeddedResource Include="sfx\7zxSD_LZMA_x64.sfx" />
     <EmbeddedResource Include="sfx\7zxSD_PPMd_x64.sfx" />
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)..\packages\7ZipExe.18.5.0\tools\x64\7z.dll" "$(TargetDir)" /S /Y
+xcopy "$(TargetDir)..\packages\7ZipExe.18.5.0\tools\x64\7z.exe" "$(TargetDir)" /S /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
